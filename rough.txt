@@ -1,0 +1,6 @@
+tasks :-
+* make the timer to start counting rest time(5 min to 10 min) then loop it until user breaks the loop
+* break that loop into cycles like if someone wants 2 cycles of 15 min work and 5 min break 
+* make that value uniqe to spcific user 
+* make users 
+* make a coustomisable theme input feild

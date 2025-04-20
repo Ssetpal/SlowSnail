@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="timerstyle.css">
+   <link rel="stylesheet" href="pomodoro.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    <link rel="stylesheet" href="style.css">
+    </head>
+
+<body> 
+<!--Drop-down Btn -->
+<div class="navBar">
+    <button class="dropbtn" id="dropDownbtn" aria-haspopup="true" aria-expanded="false">➕</button>
+   <div class="navContainer" id="navcontainer" style="display: none;">
+        <!-- This link button is to redirect to home page but as of now it is not required-->
+        <!--<a class="active" href="#">home</a>-->
+        <div class="subMenu">
+            <button id="subdropdownBtn" class="submenuBtn">settings</button>
+            <div id="submenuItem" class="subMenuItem" class="show">
+                <input type="text"  placeholder="Hrs" minlength="0" maxlength="2" class="minInput">
+                <input type="text" id="minInputs"  placeholder="Min" value="15" minlength="0" maxlength="3" class="minInput">
+                <input type="text" id="secInputs" placeholder="Sec" minlength="0" maxlength="3" class="secInput" inputmode="numeric">
+                <button id="SetCustomTime" class="SetTimer" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABq0lEQVR4nO2ZvUoDURCFbxREwU5BH8BS0dpGfIgtrFKoc2Y3WMRCy1ha2voCFipoKYjEShEzE9GAILFRtLXQJgm4sknIpvAvlTu4B04/H/fOvfPjXKpUqb5VISz0sVIWSidQuofgFAJ4FW/AJV3ertfPQnusCD9x1S+T50KXcUkVCa1+EXzHUDr3dXnWJVGsuP0JoGnBO5T2AwkmXJIEpcavAGKQGgtt5S5yIy4J4l6C775WghdfaD1bzA6aBOA4Px58IYpeMpMAHPvS1+U5ywBh+2od8xVPmgXglutQbC9eL45ZBWifBr1CsJE/yw+ZBOhY8BglevTr2wTQ9okolfwyzZsF4K5EpxJNmQXg1mk0okQPLoJxkwAc58cbFJtBJRi2CaAdV4Py0oxlgJAVz1SiUcsAYVQgmgZgoUPTABAcWAdYMwsApaeeO72/DppjV6GY7in4RACI0Y8MlksJWC3mYLacFqMNjeWWsm62qYfhscqlycEWrI4WkZjhrqBmerwOoRvTCw4SWjG9YipEG0qhHbNLvqZCl4FiAUpHLHTHQkUza9ZUqf6BPgB5CLKyzRd9LQAAAABJRU5ErkJggg=="></button>
+            </div>
+        </div>
+   </div>
+</div>
+ <!--POP-UP alert BOX-->
+ <div class="container">
+    <button class="custom-button">ℹ️</button>
+        </div>
+<script src=
+    "https://cdn.jsdelivr.net/npm/sweetalert2@10">
+        </script>
+<!--Main contianer-->
+<div class="app-container">
+    <div class="main-container center">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+       
+            <!--progress indicator-->
+        <div class="circle-container center">
+            <div class="semicircle"></div>
+            <div class="semicircle"></div>
+            <div class="semicircle"></div>
+            <div class="outermost-circle "></div>
+        </div>
+         
+        <!-- timer -->
+        <div class="timer-container center">
+            <div class="timer center"></div>
+        </div>
+    </div>
+<div class="input_Box center">
+    <input spellcheck="false" type="text" inputmode="numeric" id="hoursInput" placeholder="00 Hrs" minlength="0" maxlength="2">
+    <input spellcheck="false" type="text" inputmode="numeric" id="minutesInput" placeholder="min" value="15" minlength="0" maxlength="3">
+    <input spellcheck="false" type="text" inputmode="numeric" id="secondsInput" placeholder="00 Sec" minlength="0" maxlength="3">
+</div>
+<div></div>
+<div class="buttons center">
+    <audio id="audioF" src="retro-notification.wav"></audio>
+    <button id="start" class="button-12"><img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABq0lEQVR4nO2ZvUoDURCFbxREwU5BH8BS0dpGfIgtrFKoc2Y3WMRCy1ha2voCFipoKYjEShEzE9GAILFRtLXQJgm4sknIpvAvlTu4B04/H/fOvfPjXKpUqb5VISz0sVIWSidQuofgFAJ4FW/AJV3ertfPQnusCD9x1S+T50KXcUkVCa1+EXzHUDr3dXnWJVGsuP0JoGnBO5T2AwkmXJIEpcavAGKQGgtt5S5yIy4J4l6C775WghdfaD1bzA6aBOA4Px58IYpeMpMAHPvS1+U5ywBh+2od8xVPmgXglutQbC9eL45ZBWifBr1CsJE/yw+ZBOhY8BglevTr2wTQ9okolfwyzZsF4K5EpxJNmQXg1mk0okQPLoJxkwAc58cbFJtBJRi2CaAdV4Py0oxlgJAVz1SiUcsAYVQgmgZgoUPTABAcWAdYMwsApaeeO72/DppjV6GY7in4RACI0Y8MlksJWC3mYLacFqMNjeWWsm62qYfhscqlycEWrI4WkZjhrqBmerwOoRvTCw4SWjG9YipEG0qhHbNLvqZCl4FiAUpHLHTHQkUza9ZUqf6BPgB5CLKyzRd9LQAAAABJRU5ErkJggg=="></button>
+    <button id="stop" class="button-12"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABjElEQVR4nO3Yz0oCQRzA8aFrVBYY9A+qW4dS0Jk18dCb9QAdZLP5idRjBJ3CokP0h6A6qLvzY10vPYaxtgsaa4i7ubPy+zzAyJfRmfnJGCGEEEIIIf/BkcYBSt7sNgobca35dXa0iMCv7bpxwmYFJb9FEH2U4lPB8XrU9VpX5SUE/hCs2T9lC2wWLDOfVcDfvQ9WUrSi7Iy3EwrEnR/hdqC4z2bJhcoqAn/1Y9purbwZNaJ7LvZYEqLEDEco4N3EIkJjQHQmifEj7rWJGImR4iWI6dRLW2wMyxTLSvJH7SLCYlByKyxG+4iAU81lxsVgo7AyHOHUjV2mM+dXjGWK7dRFBHqXpTWU4m0QA9xWUjz5R6yyZXGHpYlTzWUUiOefGO945k5qdmLuQnrz8NVyQk6u1P3Y3T/uktTcIe4Et7u2T5Np3lvaxrhTvIC1eb7H/YxPNMYanRLb00yJgzld8mZi06Fl5rMI/COuUTexGJyXPx+wVjr0YuKIGI0RN3hhVOJakxBCCCGEEDbsG/LW5AOUrwDYAAAAAElFTkSuQmCC"></button>
+  </div>
+    
+    <script src="timerapp.js"></script> 
+   <!--<script src="pomodoro.js"></script>-->
+</div>
+
+</body>
+</html>
