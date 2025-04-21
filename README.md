@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @Ssetpal
+- 👋 Hi, I’m Sanket Setpal
 - 👀 I’m interested in reading books and solving programming problems  
 - 🌱 I’m currently learning javaScript
 - 💞️ I’m looking to collaborate on ...
